@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dégustation de vin — Les Vins du Terroir</title>
+<title>D&eacute;gustation de vin — Les Vins du Terroir</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -151,7 +151,7 @@
 <body>
 
 <div class="estab">
-  <div class="estab-eyebrow">Cave à vins • Paris 7e</div>
+  <div class="estab-eyebrow">Cave &agrave; vins • Paris 7e</div>
   <div class="estab-name">Les Vins du Terroir</div>
   <div class="estab-info">
     <span>📍 34 avenue Duquesne, Paris 7<sup>e</sup></span>
@@ -164,21 +164,21 @@
 
 <div class="tabs">
   <button class="tab-btn active" id="tab-form" onclick="showTab('form',this)">Sondage</button>
-  <button class="tab-btn" id="tab-results" onclick="showTab('results',this)">Résultats</button>
+  <button class="tab-btn" id="tab-results" onclick="showTab('results',this)">R&eacute;sultats</button>
 </div>
 
 <!-- FORM -->
 <div class="page active" id="page-form">
   <div class="form-inner">
     <div class="fheader">
-      <div class="fheader-tag"><span class="horn"></span>Événement d'équipe<span class="horn"></span></div>
-      <h1>Dégustation<br><em>de vin</em></h1>
-      <p class="fheader-sub">Quelques questions pour organiser une soirée à votre goût. Merci de répondre avant de nous retrouver !</p>
+      <div class="fheader-tag"><span class="horn"></span>&Eacute;v&eacute;nement d'&eacute;quipe<span class="horn"></span></div>
+      <h1>D&eacute;gustation<br><em>de vin</em></h1>
+      <p class="fheader-sub">Quelques questions pour organiser une soir&eacute;e &agrave; votre go&ucirc;t. Merci de r&eacute;pondre avant de nous retrouver !</p>
     </div>
     <div id="form-area">
       <div class="card">
         <div class="cnum">01 —</div>
-        <div class="cq">Votre prénom</div>
+        <div class="cq">Votre pr&eacute;nom</div>
         <input type="text" class="name-input" id="name" placeholder="ex. Sophie" autocomplete="given-name">
       </div>
       <div class="card">
@@ -197,35 +197,35 @@
         <div class="cnum">03 —</div>
         <div class="cq">Quel budget par personne ?</div>
         <div class="budget-grid" id="budget">
-          <div class="bcard" data-val="40–50 €"><span class="bamount">40–50 €</span><span class="blabel">Dégustation guidée</span></div>
-          <div class="bcard" data-val="50–60 €"><span class="bamount">50–60 €</span><span class="blabel">Avec accord mets</span></div>
-          <div class="bcard" data-val="60–70 €"><span class="bamount">60–70 €</span><span class="blabel">Sélection prestige</span></div>
-          <div class="bcard" data-val="70–80 €"><span class="bamount">70–80 €</span><span class="blabel">Expérience premium</span></div>
+          <div class="bcard" data-val="40-50 EUR"><span class="bamount">40&#8209;50&#8239;&euro;</span><span class="blabel">D&eacute;gustation guid&eacute;e</span></div>
+          <div class="bcard" data-val="50-60 EUR"><span class="bamount">50&#8209;60&#8239;&euro;</span><span class="blabel">Avec accord mets</span></div>
+          <div class="bcard" data-val="60-70 EUR"><span class="bamount">60&#8209;70&#8239;&euro;</span><span class="blabel">S&eacute;lection prestige</span></div>
+          <div class="bcard" data-val="70-80 EUR"><span class="bamount">70&#8209;80&#8239;&euro;</span><span class="blabel">Exp&eacute;rience premium</span></div>
         </div>
       </div>
       <div class="card">
         <div class="cnum">04 —</div>
-        <div class="cq">Quel thème vous inspire ?<br><span class="chint">Plusieurs choix possibles</span></div>
+        <div class="cq">Quel th&egrave;me vous inspire ?<br><span class="chint">Plusieurs choix possibles</span></div>
         <div class="theme-grid" id="theme">
-          <div class="tcard" data-val="Bordeaux"><div class="ticon">🏰</div><div><span class="tname">Bordeaux</span><span class="tdesc">Médoc, Saint-Émilion, Pomerol</span></div></div>
+          <div class="tcard" data-val="Bordeaux"><div class="ticon">🏰</div><div><span class="tname">Bordeaux</span><span class="tdesc">M&eacute;doc, Saint-&Eacute;milion, Pomerol</span></div></div>
           <div class="tcard" data-val="Bourgogne"><div class="ticon">🍇</div><div><span class="tname">Bourgogne</span><span class="tdesc">Pinot noir, Chardonnay, terroirs</span></div></div>
           <div class="tcard" data-val="Espagne"><div class="ticon">🌞</div><div><span class="tname">Espagne</span><span class="tdesc">Rioja, Ribera, Priorat</span></div></div>
           <div class="tcard" data-val="Italie"><div class="ticon">🫒</div><div><span class="tname">Italie</span><span class="tdesc">Barolo, Brunello, Amarone</span></div></div>
-          <div class="tcard" data-val="Vallée du Rhône"><div class="ticon">🌊</div><div><span class="tname">Vallée du Rhône</span><span class="tdesc">Côte-Rôtie, Châteauneuf, Condrieu</span></div></div>
-          <div class="tcard" data-val="Languedoc"><div class="ticon">☀️</div><div><span class="tname">Languedoc</span><span class="tdesc">Faugères, Pic Saint-Loup, Corbières</span></div></div>
-          <div class="tcard" data-val="Rouge vs Blanc"><div class="ticon">⚖️</div><div><span class="tname">Rouge vs Blanc</span><span class="tdesc">Défi comparatif à l'aveugle</span></div></div>
+          <div class="tcard" data-val="Vallee du Rhone"><div class="ticon">🌊</div><div><span class="tname">Vall&eacute;e du Rh&ocirc;ne</span><span class="tdesc">C&ocirc;te-R&ocirc;tie, Ch&acirc;teauneuf, Condrieu</span></div></div>
+          <div class="tcard" data-val="Languedoc"><div class="ticon">☀️</div><div><span class="tname">Languedoc</span><span class="tdesc">Faug&egrave;res, Pic Saint-Loup, Corbi&egrave;res</span></div></div>
+          <div class="tcard" data-val="Rouge vs Blanc"><div class="ticon">⚖️</div><div><span class="tname">Rouge vs Blanc</span><span class="tdesc">D&eacute;fi comparatif &agrave; l'aveugle</span></div></div>
           <div class="tcard" data-val="Surprise !"><div class="ticon">🎁</div><div><span class="tname">Surprise !</span><span class="tdesc">Je fais confiance au caviste</span></div></div>
         </div>
       </div>
       <div class="submit-area">
-        <button class="btn-submit" id="btn-submit" onclick="submitForm()">Envoyer ma réponse</button>
+        <button class="btn-submit" id="btn-submit" onclick="submitForm()">Envoyer ma r&eacute;ponse</button>
         <p id="error-msg"></p>
       </div>
     </div>
     <div class="success" id="success">
       <div class="sicon">🍷</div>
       <h2>Merci, <span id="sname"></span> !</h2>
-      <p>Votre réponse a bien été enregistrée.<br>On vous dira très vite quelle date est retenue !</p>
+      <p>Votre r&eacute;ponse a bien &eacute;t&eacute; enregistr&eacute;e.<br>On vous dira tr&egrave;s vite quelle date est retenue !</p>
       <div class="sbox" id="sbox"></div>
     </div>
   </div>
@@ -235,7 +235,7 @@
 <div class="page" id="page-results">
   <div class="results-inner">
     <div class="rhead">
-      <div><h2>Résultats du sondage</h2><p id="rsub">Chargement…</p></div>
+      <div><h2>R&eacute;sultats du sondage</h2><p id="rsub">Chargement…</p></div>
       <div class="rhead-btns">
         <button class="btn-refresh" onclick="loadResults()">↻ Actualiser</button>
         <button class="btn-clear" onclick="clearData()">Effacer</button>
@@ -247,7 +247,7 @@
 
 <script>
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
-// Stockage via GitHub API — même repo que ce fichier
+// Stockage via GitHub API — m&ecirc;me repo que ce fichier
 const GH_OWNER = 'PHviva';
 const GH_REPO  = 'degustation-vin';
 const GH_FILE  = 'responses.json';
@@ -256,8 +256,17 @@ const API      = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/$
 const HEADERS  = { 'Authorization': `token ${GH_TOKEN}`, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json' };
 
 const DATES   = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
-const BUDGETS = ['40–50 €','50–60 €','60–70 €','70–80 €'];
-const THEMES  = ['Bordeaux','Bourgogne','Espagne','Italie','Vallée du Rhône','Languedoc','Rouge vs Blanc','Surprise !'];
+const BUDGETS = ['40-50 EUR','50-60 EUR','60-70 EUR','70-80 EUR'];
+const THEMES  = ['Bordeaux','Bourgogne','Espagne','Italie','Vallee du Rhone','Languedoc','Rouge vs Blanc','Surprise !'];
+const DISPLAY = {
+  '40-50 EUR': '40–50 €',
+  '50-60 EUR': '50–60 €',
+  '60-70 EUR': '60–70 €',
+  '70-80 EUR': '70–80 €',
+  'Vallee du Rhone': 'Vallée du Rhône',
+};
+function disp(v) { return DISPLAY[v] || v; }
+
 
 // ─── GitHub storage ───────────────────────────────────────────────────────────
 async function ghRead() {
@@ -271,12 +280,12 @@ async function ghRead() {
 
 async function ghWrite(responses, sha) {
   const content = btoa(unescape(encodeURIComponent(JSON.stringify({ responses }, null, 2))));
-  const body = { message: 'Réponse sondage dégustation', content };
+  const body = { message: 'R&eacute;ponse sondage d&eacute;gustation', content };
   if (sha) body.sha = sha;
   const res = await fetch(API, { method: 'PUT', headers: HEADERS, body: JSON.stringify(body) });
   if (!res.ok) {
     const err = await res.json();
-    throw new Error(err.message || 'Écriture impossible');
+    throw new Error(err.message || '&Eacute;criture impossible');
   }
   return res.json();
 }
@@ -317,24 +326,24 @@ async function submitForm() {
     document.getElementById('success').classList.add('show');
     document.getElementById('sname').textContent = name;
     document.getElementById('sbox').innerHTML = [
-      ['Dates', dates.join(', ')], ['Budget', budget.dataset.val], ['Thème(s)', themes.join(', ')]
+      ['Dates', dates.join(', ')], ['Budget', budget.dataset.val], ['Th&egrave;me(s)', themes.join(', ')]
     ].map(([k,v]) => `<div class="sline"><span class="sk">${k}</span><span class="sv">${v}</span></div>`).join('');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch(e) {
-    btn.disabled = false; btn.textContent = 'Envoyer ma réponse';
+    btn.disabled = false; btn.textContent = 'Envoyer ma r&eacute;ponse';
     err.textContent = 'Erreur : ' + e.message; err.style.display = 'block';
   }
 }
 
 // ─── Results ──────────────────────────────────────────────────────────────────
 async function loadResults() {
-  document.getElementById('rbody').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement des réponses…</div>';
+  document.getElementById('rbody').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement des r&eacute;ponses…</div>';
   try {
     const data = await ghRead();
     renderResults(data.responses || []);
   } catch(e) {
     document.getElementById('rsub').textContent = 'Erreur de chargement.';
-    document.getElementById('rbody').innerHTML = '<div class="no-data">Impossible de charger les réponses.<br>' + e.message + '</div>';
+    document.getElementById('rbody').innerHTML = '<div class="no-data">Impossible de charger les r&eacute;ponses.<br>' + e.message + '</div>';
   }
 }
 
@@ -342,11 +351,11 @@ function renderResults(R) {
   const sub  = document.getElementById('rsub');
   const body = document.getElementById('rbody');
   if (!R.length) {
-    sub.textContent = 'Aucune réponse pour l\'instant.';
-    body.innerHTML  = '<div class="no-data">Aucune réponse enregistrée.<br>Partagez le lien à vos collègues !</div>';
+    sub.textContent = 'Aucune r&eacute;ponse pour l\'instant.';
+    body.innerHTML  = '<div class="no-data">Aucune r&eacute;ponse enregistr&eacute;e.<br>Partagez le lien &agrave; vos coll&egrave;gues !</div>';
     return;
   }
-  sub.textContent = R.length + ' réponse' + (R.length>1?'s':'') + ' partagée' + (R.length>1?'s':'');
+  sub.textContent = R.length + ' r&eacute;ponse' + (R.length>1?'s':'') + ' partag&eacute;e' + (R.length>1?'s':'');
 
   const dateCount   = {}; DATES.forEach(d => dateCount[d] = R.filter(r => r.dates.includes(d)).length);
   const budgetCount = {}; R.forEach(r => { budgetCount[r.budget] = (budgetCount[r.budget]||0)+1; });
@@ -362,17 +371,17 @@ function renderResults(R) {
   const metaHTML = `<div class="meta-row">
     <div class="mcard"><div class="mnum">${R.length}</div><div class="mlabel">Participant${R.length>1?'s':''}</div></div>
     <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestDate}</div><div class="mlabel">Date favorite</div></div>
-    <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestBudget?bestBudget[0]:'—'}</div><div class="mlabel">Budget favori</div></div>
+    <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestBudget?disp(bestBudget[0]):'—'}</div><div class="mlabel">Budget favori</div></div>
   </div>`;
 
   // Reco box
   const recoItems = [
-    { label: 'Date idéale', value: bestDate, n: dateCount[bestDate], detail: `${dateCount[bestDate]} participant${dateCount[bestDate]>1?'s':''} disponible${dateCount[bestDate]>1?'s':''}` },
-    { label: 'Budget retenu', value: bestBudget?bestBudget[0]:'—', n: bestBudget?bestBudget[1]:0, detail: `Choix majoritaire à ${bestBudget?pct(bestBudget[1]):0}%` },
-    { label: 'Thème plébiscité', value: topTheme?topTheme[0]:'—', n: topTheme?topTheme[1]:0, detail: `${topTheme?topTheme[1]:0} vote${topTheme&&topTheme[1]>1?'s':''}` },
+    { label: 'Date id&eacute;ale', value: bestDate, n: dateCount[bestDate], detail: `${dateCount[bestDate]} participant${dateCount[bestDate]>1?'s':''} disponible${dateCount[bestDate]>1?'s':''}` },
+    { label: 'Budget retenu', value: bestBudget?disp(bestBudget[0]):'—', n: bestBudget?bestBudget[1]:0, detail: `Choix majoritaire &agrave; ${bestBudget?pct(bestBudget[1]):0}%` },
+    { label: 'Th&egrave;me pl&eacute;biscit&eacute;', value: topTheme?topTheme[0]:'—', n: topTheme?topTheme[1]:0, detail: `${topTheme?topTheme[1]:0} vote${topTheme&&topTheme[1]>1?'s':''}` },
   ];
   const recoHTML = `<div class="reco-box">
-    <div class="reco-title">🎯 Recommandation pour la réservation</div>
+    <div class="reco-title">🎯 Recommandation pour la r&eacute;servation</div>
     <div class="reco-grid">${recoItems.map(it => `
       <div class="reco-item">
         <div class="reco-label">${it.label}</div>
@@ -391,32 +400,32 @@ function renderResults(R) {
     const max = Math.max(...items.map(countFn), 1);
     return `<div class="section-title">${title}</div><div class="bar-list">`
       + items.map(i => { const c=countFn(i), p=pct(c), top=c===max&&c>0;
-        return `<div class="bar-item"><span class="bar-label">${i}${top?' 🏆':''}</span><div class="bar-track"><div class="bar-fill${top?' top':''}" style="width:${p}%"></div></div><span class="bar-count">${c}</span></div>`;
+        return `<div class="bar-item"><span class="bar-label">${disp(i)}${top?' 🏆':''}</span><div class="bar-track"><div class="bar-fill${top?' top':''}" style="width:${p}%"></div></div><span class="bar-count">${c}</span></div>`;
       }).join('') + '</div>';
   }
 
   // Table
-  const tableHTML = `<div class="section-title">Détail des réponses</div>
+  const tableHTML = `<div class="section-title">D&eacute;tail des r&eacute;ponses</div>
     <div style="overflow-x:auto"><table class="rtable">
-      <thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème(s)</th><th>Répondu le</th></tr></thead>
+      <thead><tr><th>Pr&eacute;nom</th><th>Dates dispo</th><th>Budget</th><th>Th&egrave;me(s)</th><th>R&eacute;pondu le</th></tr></thead>
       <tbody>${[...R].reverse().map(r=>`<tr>
         <td><strong>${r.name}</strong></td>
         <td>${r.dates.map(d=>`<span class="tag">${d}</span>`).join('')}</td>
-        <td>${r.budget}</td>
-        <td>${(r.themes||(r.theme?[r.theme]:[])).map(t=>`<span class="tag">${t}</span>`).join('')}</td>
+        <td>${disp(r.budget)}</td>
+        <td>${(r.themes||(r.theme?[r.theme]:[])).map(t=>`<span class="tag">${disp(t)}</span>`).join('')}</td>
         <td style="color:var(--muted)">${r.ts}</td>
       </tr>`).join('')}</tbody>
     </table></div>`;
 
   body.innerHTML = metaHTML + recoHTML
-    + barChart('Disponibilités par date', DATES, d => dateCount[d]||0)
+    + barChart('Disponibilit&eacute;s par date', DATES, d => dateCount[d]||0)
     + barChart('Budget par personne', BUDGETS, b => budgetCount[b]||0)
-    + barChart('Thème préféré', THEMES, t => themeCount[t]||0)
+    + barChart('Th&egrave;me pr&eacute;f&eacute;r&eacute;', THEMES, t => themeCount[t]||0)
     + tableHTML;
 }
 
 async function clearData() {
-  if (!confirm('Effacer toutes les réponses ? Action irréversible.')) return;
+  if (!confirm('Effacer toutes les r&eacute;ponses ? Action irr&eacute;versible.')) return;
   try {
     const data = await ghRead();
     await ghWrite([], data.sha);
