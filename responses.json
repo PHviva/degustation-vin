@@ -10,16 +10,31 @@
         "Mer 3 juin",
         "Jeu 4 juin"
       ],
-      "budget": "50–60 €",
+      "budget": "50â60 â¬",
       "themes": [
         "Bourgogne",
         "Italie",
-        "Vallée du Rhône",
+        "VallÃ©e du RhÃ´ne",
         "Languedoc",
         "Rouge vs Blanc",
         "Surprise !"
       ],
       "ts": "20 avr., 17:34"
+    },
+    {
+      "name": "Maxime Jeantet",
+      "dates": [
+        "Mer 20 mai",
+        "Mer 27 mai",
+        "Jeu 28 mai",
+        "Jeu 4 juin"
+      ],
+      "budget": "70–80 €",
+      "themes": [
+        "Bourgogne",
+        "Vallée du Rhône"
+      ],
+      "ts": "20 avr., 17:35"
     }
   ]
 }
