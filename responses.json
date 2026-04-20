@@ -37,6 +37,20 @@
         "Surprise !"
       ],
       "ts": "20 avr., 17:49"
+    },
+    {
+      "name": "Victor-Lazar",
+      "dates": [
+        "Jeu 21 mai",
+        "Mer 3 juin",
+        "Jeu 4 juin"
+      ],
+      "budget": "50-60 EUR",
+      "themes": [
+        "Italie",
+        "Vallee du Rhone"
+      ],
+      "ts": "20 avr., 17:50"
     }
   ]
 }
