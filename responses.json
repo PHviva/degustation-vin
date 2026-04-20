@@ -19,6 +19,24 @@
         "Surprise !"
       ],
       "ts": "20 avr., 17:45"
+    },
+    {
+      "name": "Syl20",
+      "dates": [
+        "Mer 27 mai",
+        "Jeu 28 mai",
+        "Mer 3 juin",
+        "Jeu 4 juin"
+      ],
+      "budget": "50-60 EUR",
+      "themes": [
+        "Bourgogne",
+        "Espagne",
+        "Italie",
+        "Vallee du Rhone",
+        "Surprise !"
+      ],
+      "ts": "20 avr., 17:49"
     }
   ]
 }
