@@ -68,7 +68,7 @@
   .pill:hover { border-color: var(--wine-light); background: var(--wine-pale); }
   .pill.selected { background: var(--wine); border-color: var(--wine); color: white; }
 
-  .budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .budget-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
   .bcard { border: 1px solid var(--border); border-radius: 14px; background: var(--mist); padding: 16px 10px; cursor: pointer; transition: all 0.15s; text-align: center; user-select: none; }
   .bcard:hover { border-color: var(--wine-light); background: var(--wine-pale); }
   .bcard.selected { background: var(--wine-pale); border-color: var(--wine); box-shadow: inset 0 0 0 1px var(--wine); }
@@ -138,6 +138,7 @@
     .bar-label { min-width: 90px; font-size: 12px; }
     .tab-btn { padding: 11px 16px; font-size: 11px; }
     .estab-info { gap: 8px; font-size: 11px; }
+    .budget-grid { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
 </head>
@@ -181,12 +182,12 @@
         <div class="cnum">02 —</div>
         <div class="cq">Quelles dates vous conviennent ?<br><span class="chint">Plusieurs choix possibles</span></div>
         <div class="pills" id="dates">
-          <div class="pill" data-val="Mer 21 mai">Mer 21 mai</div>
-          <div class="pill" data-val="Jeu 22 mai">Jeu 22 mai</div>
-          <div class="pill" data-val="Mer 28 mai">Mer 28 mai</div>
-          <div class="pill" data-val="Jeu 29 mai">Jeu 29 mai</div>
-          <div class="pill" data-val="Mer 4 juin">Mer 4 juin</div>
-          <div class="pill" data-val="Jeu 5 juin">Jeu 5 juin</div>
+          <div class="pill" data-val="Mer 20 mai">Mer 20 mai</div>
+          <div class="pill" data-val="Jeu 21 mai">Jeu 21 mai</div>
+          <div class="pill" data-val="Mer 27 mai">Mer 27 mai</div>
+          <div class="pill" data-val="Jeu 28 mai">Jeu 28 mai</div>
+          <div class="pill" data-val="Mer 3 juin">Mer 3 juin</div>
+          <div class="pill" data-val="Jeu 4 juin">Jeu 4 juin</div>
         </div>
       </div>
 
@@ -194,15 +195,16 @@
         <div class="cnum">03 —</div>
         <div class="cq">Quel budget par personne ?</div>
         <div class="budget-grid" id="budget">
-          <div class="bcard" data-val="30–40 €"><span class="bamount">30–40 €</span><span class="blabel">Format découverte</span></div>
           <div class="bcard" data-val="40–50 €"><span class="bamount">40–50 €</span><span class="blabel">Dégustation guidée</span></div>
           <div class="bcard" data-val="50–60 €"><span class="bamount">50–60 €</span><span class="blabel">Avec accord mets</span></div>
+          <div class="bcard" data-val="60–70 €"><span class="bamount">60–70 €</span><span class="blabel">Sélection prestige</span></div>
+          <div class="bcard" data-val="70–80 €"><span class="bamount">70–80 €</span><span class="blabel">Expérience premium</span></div>
         </div>
       </div>
 
       <div class="card">
         <div class="cnum">04 —</div>
-        <div class="cq">Quel thème vous inspire ?</div>
+        <div class="cq">Quel thème vous inspire ?<br><span class="chint">Plusieurs choix possibles</span></div>
         <div class="theme-grid" id="theme">
           <div class="tcard" data-val="Bordeaux"><div class="ticon">🏰</div><div><span class="tname">Bordeaux</span><span class="tdesc">Médoc, Saint-Émilion, Pomerol</span></div></div>
           <div class="tcard" data-val="Bourgogne"><div class="ticon">🍇</div><div><span class="tname">Bourgogne</span><span class="tdesc">Pinot noir, Chardonnay, terroirs</span></div></div>
@@ -244,8 +246,8 @@
 
 <script>
 const KEY = 'vdt_degustation_v1';
-const DATES = ['Mer 21 mai','Jeu 22 mai','Mer 28 mai','Jeu 29 mai','Mer 4 juin','Jeu 5 juin'];
-const BUDGETS = ['30–40 €','40–50 €','50–60 €'];
+const DATES = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
+const BUDGETS = ['40–50 €','50–60 €','60–70 €','70–80 €'];
 const THEMES = ['Bordeaux','Bourgogne','Espagne','Italie','Vallée du Rhône','Languedoc','Rouge vs Blanc','Surprise !'];
 
 function getR(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch(e){ return []; } }
@@ -265,24 +267,24 @@ document.querySelectorAll('#budget .bcard').forEach(c=>c.addEventListener('click
   document.querySelectorAll('#budget .bcard').forEach(x=>x.classList.remove('selected')); c.classList.add('selected');
 }));
 document.querySelectorAll('#theme .tcard').forEach(c=>c.addEventListener('click',()=>{
-  document.querySelectorAll('#theme .tcard').forEach(x=>x.classList.remove('selected')); c.classList.add('selected');
+  c.classList.toggle('selected');
 }));
 
 function submitForm(){
   const name = document.getElementById('name').value.trim();
   const dates = [...document.querySelectorAll('#dates .pill.selected')].map(p=>p.dataset.val);
   const budget = document.querySelector('#budget .bcard.selected');
-  const theme = document.querySelector('#theme .tcard.selected');
+  const themes = [...document.querySelectorAll('#theme .tcard.selected')].map(c=>c.dataset.val);
   const err = document.getElementById('error-msg');
-  if(!name||dates.length===0||!budget||!theme){ err.style.display='block'; return; }
+  if(!name||dates.length===0||!budget||themes.length===0){ err.style.display='block'; return; }
   err.style.display='none';
-  const entry = { name, dates, budget: budget.dataset.val, theme: theme.dataset.val,
+  const entry = { name, dates, budget: budget.dataset.val, themes,
     ts: new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}) };
   const all = getR(); all.push(entry); saveR(all);
   document.getElementById('form-area').style.display='none';
   document.getElementById('success').classList.add('show');
   document.getElementById('sname').textContent=name;
-  document.getElementById('sbox').innerHTML = [['Dates',dates.join(', ')],['Budget',budget.dataset.val],['Thème',theme.dataset.val]]
+  document.getElementById('sbox').innerHTML = [['Dates',dates.join(', ')],['Budget',budget.dataset.val],['Thème(s)',themes.join(', ')]]
     .map(([k,v])=>`<div class="sline"><span class="sk">${k}</span><span class="sv">${v}</span></div>`).join('');
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -319,14 +321,14 @@ function renderResults(){
       + '</div>';
   }
 
-  const tCount={};R.forEach(r=>{tCount[r.theme]=(tCount[r.theme]||0)+1;});
+  const tCount={};R.forEach(r=>{ const ts = r.themes || (r.theme ? [r.theme] : []); ts.forEach(t=>{tCount[t]=(tCount[t]||0)+1;}); });
 
   const table = `<div class="section-title">Détail des réponses</div>
-    <div style="overflow-x:auto"><table class="rtable"><thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème</th><th>Répondu le</th></tr></thead><tbody>`
+    <div style="overflow-x:auto"><table class="rtable"><thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème(s)</th><th>Répondu le</th></tr></thead><tbody>`
     +[...R].reverse().map(r=>`<tr>
       <td><strong>${r.name}</strong></td>
       <td>${r.dates.map(d=>`<span class="tag">${d}</span>`).join('')}</td>
-      <td>${r.budget}</td><td>${r.theme}</td>
+      <td>${r.budget}</td><td>${(r.themes||[r.theme]).map(t=>`<span class="tag">${t}</span>`).join('')}</td>
       <td style="color:var(--muted)">${r.ts}</td></tr>`).join('')
     +`</tbody></table></div>`;
 
