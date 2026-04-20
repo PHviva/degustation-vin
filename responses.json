@@ -1,0 +1,25 @@
+{
+  "responses": [
+    {
+      "name": "Paul-Henry",
+      "dates": [
+        "Mer 20 mai",
+        "Jeu 21 mai",
+        "Mer 27 mai",
+        "Jeu 28 mai",
+        "Mer 3 juin",
+        "Jeu 4 juin"
+      ],
+      "budget": "50–60 €",
+      "themes": [
+        "Bourgogne",
+        "Italie",
+        "Vallée du Rhône",
+        "Languedoc",
+        "Rouge vs Blanc",
+        "Surprise !"
+      ],
+      "ts": "20 avr., 17:34"
+    }
+  ]
+}
