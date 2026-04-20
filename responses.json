@@ -10,11 +10,11 @@
         "Mer 3 juin",
         "Jeu 4 juin"
       ],
-      "budget": "50Ã¢ÂÂ60 Ã¢ÂÂ¬",
+      "budget": "50ÃÂ¢ÃÂÃÂ60 ÃÂ¢ÃÂÃÂ¬",
       "themes": [
         "Bourgogne",
         "Italie",
-        "VallÃÂ©e du RhÃÂ´ne",
+        "VallÃÂÃÂ©e du RhÃÂÃÂ´ne",
         "Languedoc",
         "Rouge vs Blanc",
         "Surprise !"
@@ -29,10 +29,10 @@
         "Jeu 28 mai",
         "Jeu 4 juin"
       ],
-      "budget": "70â80 â¬",
+      "budget": "70Ã¢ÂÂ80 Ã¢ÂÂ¬",
       "themes": [
         "Bourgogne",
-        "VallÃ©e du RhÃ´ne"
+        "VallÃÂ©e du RhÃÂ´ne"
       ],
       "ts": "20 avr., 17:35"
     },
@@ -43,12 +43,32 @@
         "Mer 3 juin",
         "Jeu 4 juin"
       ],
-      "budget": "50–60 €",
+      "budget": "50â60 â¬",
       "themes": [
         "Italie",
-        "Vallée du Rhône"
+        "VallÃ©e du RhÃ´ne"
       ],
       "ts": "20 avr., 17:37"
+    },
+    {
+      "name": "Paul-Henry",
+      "dates": [
+        "Jeu 21 mai",
+        "Mer 27 mai",
+        "Jeu 28 mai",
+        "Mer 3 juin",
+        "Jeu 4 juin"
+      ],
+      "budget": "50-60 EUR",
+      "themes": [
+        "Bourgogne",
+        "Italie",
+        "Vallee du Rhone",
+        "Languedoc",
+        "Rouge vs Blanc",
+        "Surprise !"
+      ],
+      "ts": "20 avr., 17:45"
     }
   ]
 }
