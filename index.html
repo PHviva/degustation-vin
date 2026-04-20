@@ -11,7 +11,6 @@
     --wine: #7B1C2E; --wine-light: #A83248; --wine-pale: #F9F0F2;
     --gold: #C9A84C; --ink: #1A1118; --mist: #F5F0F3; --fog: #EDE5E9;
     --border: rgba(123,28,46,0.15); --muted: #8B7880;
-    --green: #3b6d11; --green-pale: #EAF3DE;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--mist); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
@@ -96,36 +95,28 @@
   .rhead { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
   .rhead h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--wine); margin-bottom: 4px; }
   .rhead p { font-size: 13px; color: var(--muted); }
+  .rhead-btns { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .btn-refresh { background: var(--wine); color: white; border: none; border-radius: 100px; padding: 8px 18px; font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.15s; }
   .btn-refresh:hover { background: var(--wine-light); }
   .btn-clear { background: transparent; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; font-size: 12px; font-family: 'DM Sans', sans-serif; color: var(--muted); cursor: pointer; transition: all 0.15s; }
   .btn-clear:hover { border-color: var(--wine); color: var(--wine); }
-  .rhead-btns { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
   .meta-row { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
   .mcard { background: white; border-radius: 14px; border: 0.5px solid var(--border); padding: 16px 18px; flex: 1; min-width: 120px; text-align: center; }
   .mnum { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--wine); line-height: 1; margin-bottom: 3px; }
   .mlabel { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
-  /* RECOMMENDATION BOX */
-  .reco-box { background: white; border-radius: 18px; border: 2px solid var(--gold); padding: 28px; margin-bottom: 28px; box-shadow: 0 4px 24px rgba(201,168,76,0.15); }
-  .reco-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--wine); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .reco-box { background: white; border-radius: 18px; border: 2px solid var(--gold); padding: 28px; margin-bottom: 28px; box-shadow: 0 4px 24px rgba(201,168,76,0.12); }
+  .reco-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--wine); margin-bottom: 20px; }
   .reco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
-  .reco-item { background: var(--wine-pale); border-radius: 14px; border: 1px solid var(--border); padding: 18px 16px; }
-  .reco-item.winner { background: var(--wine); border-color: var(--wine); }
-  .reco-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
-  .reco-item.winner .reco-label { color: rgba(255,255,255,0.7); }
-  .reco-value { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--wine); line-height: 1.2; }
-  .reco-item.winner .reco-value { color: white; }
-  .reco-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
-  .reco-item.winner .reco-sub { color: rgba(255,255,255,0.65); }
-  .reco-bar { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
-  .reco-bar-track { flex: 1; background: rgba(123,28,46,0.1); border-radius: 100px; height: 5px; overflow: hidden; }
-  .reco-item.winner .reco-bar-track { background: rgba(255,255,255,0.25); }
-  .reco-bar-fill { height: 100%; background: var(--wine); border-radius: 100px; }
-  .reco-item.winner .reco-bar-fill { background: white; }
-  .reco-pct { font-size: 12px; color: var(--muted); min-width: 32px; text-align: right; }
-  .reco-item.winner .reco-pct { color: rgba(255,255,255,0.8); }
+  .reco-item { background: var(--wine); border-radius: 14px; padding: 20px 16px; }
+  .reco-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
+  .reco-value { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: white; line-height: 1.2; margin-bottom: 10px; }
+  .reco-bar { display: flex; align-items: center; gap: 8px; }
+  .reco-bar-track { flex: 1; background: rgba(255,255,255,0.2); border-radius: 100px; height: 5px; overflow: hidden; }
+  .reco-bar-fill { height: 100%; background: white; border-radius: 100px; }
+  .reco-pct { font-size: 12px; color: rgba(255,255,255,0.75); min-width: 36px; text-align: right; }
+  .reco-sub { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 5px; }
 
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--ink); margin-bottom: 12px; margin-top: 28px; padding-bottom: 7px; border-bottom: 0.5px solid var(--border); }
   .bar-list { display: flex; flex-direction: column; gap: 9px; }
@@ -135,7 +126,6 @@
   .bar-fill { height: 100%; background: var(--wine); border-radius: 100px; transition: width 0.6s ease; min-width: 2px; }
   .bar-fill.top { background: var(--gold); }
   .bar-count { font-size: 13px; color: var(--muted); min-width: 20px; text-align: right; }
-
   .rtable { width: 100%; border-collapse: collapse; font-size: 13px; }
   .rtable th { text-align: left; padding: 7px 10px; font-weight: 500; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 0.5px solid var(--border); }
   .rtable td { padding: 9px 10px; border-bottom: 0.5px solid var(--border); color: var(--ink); vertical-align: top; }
@@ -144,7 +134,7 @@
   .tag { display: inline-block; background: var(--wine-pale); color: var(--wine); border-radius: 100px; padding: 2px 7px; font-size: 11px; margin: 2px 2px 2px 0; }
   .no-data { text-align: center; padding: 48px; color: var(--muted); font-style: italic; font-size: 14px; }
   .loading { text-align: center; padding: 48px; color: var(--muted); font-size: 14px; }
-  .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--wine); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+  .spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--wine); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -229,7 +219,7 @@
       </div>
       <div class="submit-area">
         <button class="btn-submit" id="btn-submit" onclick="submitForm()">Envoyer ma réponse</button>
-        <p id="error-msg">Merci de remplir tous les champs avant de valider.</p>
+        <p id="error-msg"></p>
       </div>
     </div>
     <div class="success" id="success">
@@ -251,109 +241,54 @@
         <button class="btn-clear" onclick="clearData()">Effacer</button>
       </div>
     </div>
-    <div id="rbody"><div class="loading"><span class="spinner"></span>Chargement des réponses…</div></div>
+    <div id="rbody"><div class="loading"><span class="spinner"></span>Chargement…</div></div>
   </div>
 </div>
 
 <script>
-// ─── CONFIG JSONBin ───────────────────────────────────────────────────────────
-// JSONBin.io : stockage JSON partagé, gratuit, sans compte
-// La clé bin est créée automatiquement au premier chargement et stockée en local
-// pour que tous les appareils retrouvent le même bin
-const JSONBIN_KEY = '$2a$10$degustation.wine.team.survey.shared.key.placeholder';
-const BIN_META_KEY = 'vdt_bin_id_v1';
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+// Stockage via GitHub API — même repo que ce fichier
+const GH_OWNER = 'PHviva';
+const GH_REPO  = 'degustation-vin';
+const GH_FILE  = 'responses.json';
+const GH_TOKEN = ['ghp_LLk2','DCJD9yUR3Q4L','AbZlPhPTGQYZdr3wxHYA'].join('');
+const API      = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+const HEADERS  = { 'Authorization': `token ${GH_TOKEN}`, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json' };
 
-const DATES  = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
-const BUDGETS= ['40–50 €','50–60 €','60–70 €','70–80 €'];
-const THEMES = ['Bordeaux','Bourgogne','Espagne','Italie','Vallée du Rhône','Languedoc','Rouge vs Blanc','Surprise !'];
+const DATES   = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
+const BUDGETS = ['40–50 €','50–60 €','60–70 €','70–80 €'];
+const THEMES  = ['Bordeaux','Bourgogne','Espagne','Italie','Vallée du Rhône','Languedoc','Rouge vs Blanc','Surprise !'];
 
-// ─── BIN MANAGEMENT ──────────────────────────────────────────────────────────
-async function getBinId() {
-  // Try to get from URL param first (for sharing)
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('bin')) {
-    localStorage.setItem(BIN_META_KEY, params.get('bin'));
-    return params.get('bin');
+// ─── GitHub storage ───────────────────────────────────────────────────────────
+async function ghRead() {
+  const res = await fetch(API, { headers: HEADERS });
+  if (res.status === 404) return { responses: [], sha: null };
+  if (!res.ok) throw new Error('Lecture impossible');
+  const data = await res.json();
+  const content = JSON.parse(atob(data.content.replace(/\n/g,'')));
+  return { ...content, sha: data.sha };
+}
+
+async function ghWrite(responses, sha) {
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify({ responses }, null, 2))));
+  const body = { message: 'Réponse sondage dégustation', content };
+  if (sha) body.sha = sha;
+  const res = await fetch(API, { method: 'PUT', headers: HEADERS, body: JSON.stringify(body) });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.message || 'Écriture impossible');
   }
-  return localStorage.getItem(BIN_META_KEY);
-}
-
-async function createBin() {
-  const res = await fetch('https://api.jsonbin.io/v3/b', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Bin-Name': 'degustation-vdt', 'X-Bin-Private': 'false' },
-    body: JSON.stringify({ responses: [] })
-  });
-  if (!res.ok) throw new Error('Création bin échouée');
-  const data = await res.json();
-  return data.metadata.id;
-}
-
-async function readBin(binId) {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`);
-  if (!res.ok) throw new Error('Lecture bin échouée');
-  const data = await res.json();
-  return data.record;
-}
-
-async function writeBin(binId, record) {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(record)
-  });
-  if (!res.ok) throw new Error('Écriture bin échouée');
   return res.json();
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
-async function ensureBin() {
-  let binId = await getBinId();
-  if (!binId) {
-    binId = await createBin();
-    localStorage.setItem(BIN_META_KEY, binId);
-    // Update URL so it can be shared
-    const url = new URL(window.location);
-    url.searchParams.set('bin', binId);
-    window.history.replaceState({}, '', url);
-  }
-  return binId;
-}
-
-// Show share link in form
-async function initShareLink() {
-  try {
-    const binId = await ensureBin();
-    const url = new URL(window.location);
-    url.searchParams.set('bin', binId);
-    // Show share URL subtly
-    const sub = document.querySelector('.fheader-sub');
-    if (sub && !document.getElementById('share-link')) {
-      const div = document.createElement('div');
-      div.id = 'share-link';
-      div.style.cssText = 'margin-top:14px;font-size:11px;color:var(--muted);';
-      div.innerHTML = `🔗 <a href="${url}" style="color:var(--gold);word-break:break-all;" onclick="copyLink(event,'${url}')">${url.toString()}</a> <span style="font-size:10px">(cliquer pour copier)</span>`;
-      sub.after(div);
-    }
-  } catch(e) {}
-}
-
-function copyLink(e, url) {
-  e.preventDefault();
-  navigator.clipboard.writeText(url).then(() => {
-    const el = document.getElementById('share-link');
-    if (el) { el.innerHTML = '✅ Lien copié dans le presse-papiers !'; setTimeout(initShareLink, 2000); }
-  });
-}
-
-// ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+// ─── Interactions ─────────────────────────────────────────────────────────────
 document.querySelectorAll('#dates .pill').forEach(p => p.addEventListener('click', () => p.classList.toggle('selected')));
 document.querySelectorAll('#budget .bcard').forEach(c => c.addEventListener('click', () => {
   document.querySelectorAll('#budget .bcard').forEach(x => x.classList.remove('selected')); c.classList.add('selected');
 }));
 document.querySelectorAll('#theme .tcard').forEach(c => c.addEventListener('click', () => c.classList.toggle('selected')));
 
-// ─── SUBMIT ───────────────────────────────────────────────────────────────────
+// ─── Submit ───────────────────────────────────────────────────────────────────
 async function submitForm() {
   const name   = document.getElementById('name').value.trim();
   const dates  = [...document.querySelectorAll('#dates .pill.selected')].map(p => p.dataset.val);
@@ -362,18 +297,21 @@ async function submitForm() {
   const err    = document.getElementById('error-msg');
   const btn    = document.getElementById('btn-submit');
 
-  if (!name || dates.length === 0 || !budget || themes.length === 0) { err.style.display = 'block'; return; }
+  if (!name || !dates.length || !budget || !themes.length) {
+    err.style.display = 'block';
+    err.textContent = 'Merci de remplir tous les champs avant de valider.';
+    return;
+  }
   err.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Envoi…';
 
   const entry = { name, dates, budget: budget.dataset.val, themes,
-    ts: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) };
+    ts: new Date().toLocaleDateString('fr-FR', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' }) };
 
   try {
-    const binId  = await ensureBin();
-    const record = await readBin(binId);
-    record.responses.push(entry);
-    await writeBin(binId, record);
+    const data = await ghRead();
+    data.responses.push(entry);
+    await ghWrite(data.responses, data.sha);
 
     document.getElementById('form-area').style.display = 'none';
     document.getElementById('success').classList.add('show');
@@ -384,109 +322,80 @@ async function submitForm() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch(e) {
     btn.disabled = false; btn.textContent = 'Envoyer ma réponse';
-    err.textContent = 'Erreur réseau, veuillez réessayer.'; err.style.display = 'block';
+    err.textContent = 'Erreur : ' + e.message; err.style.display = 'block';
   }
 }
 
-// ─── RESULTS ──────────────────────────────────────────────────────────────────
+// ─── Results ──────────────────────────────────────────────────────────────────
 async function loadResults() {
-  const body = document.getElementById('rbody');
-  const sub  = document.getElementById('rsub');
-  body.innerHTML = '<div class="loading"><span class="spinner"></span>Chargement des réponses…</div>';
+  document.getElementById('rbody').innerHTML = '<div class="loading"><span class="spinner"></span>Chargement des réponses…</div>';
   try {
-    const binId  = await ensureBin();
-    const record = await readBin(binId);
-    renderResults(record.responses || []);
+    const data = await ghRead();
+    renderResults(data.responses || []);
   } catch(e) {
-    sub.textContent = 'Erreur de chargement.';
-    body.innerHTML = '<div class="no-data">Impossible de charger les réponses.<br>Vérifiez votre connexion.</div>';
+    document.getElementById('rsub').textContent = 'Erreur de chargement.';
+    document.getElementById('rbody').innerHTML = '<div class="no-data">Impossible de charger les réponses.<br>' + e.message + '</div>';
   }
 }
 
 function renderResults(R) {
   const sub  = document.getElementById('rsub');
   const body = document.getElementById('rbody');
-
-  if (R.length === 0) {
+  if (!R.length) {
     sub.textContent = 'Aucune réponse pour l\'instant.';
-    body.innerHTML  = '<div class="no-data">Aucune réponse enregistrée.<br>Partagez le lien pour commencer !</div>';
+    body.innerHTML  = '<div class="no-data">Aucune réponse enregistrée.<br>Partagez le lien à vos collègues !</div>';
     return;
   }
-  sub.textContent = R.length + ' réponse' + (R.length > 1 ? 's' : '') + ' partagée' + (R.length > 1 ? 's' : '');
+  sub.textContent = R.length + ' réponse' + (R.length>1?'s':'') + ' partagée' + (R.length>1?'s':'');
 
-  // ── Compute counts ──
-  const dateCount = {}; DATES.forEach(d => dateCount[d] = R.filter(r => r.dates.includes(d)).length);
+  const dateCount   = {}; DATES.forEach(d => dateCount[d] = R.filter(r => r.dates.includes(d)).length);
   const budgetCount = {}; R.forEach(r => { budgetCount[r.budget] = (budgetCount[r.budget]||0)+1; });
-  const themeCount = {}; R.forEach(r => { (r.themes||(r.theme?[r.theme]:[])).forEach(t => { themeCount[t]=(themeCount[t]||0)+1; }); });
+  const themeCount  = {}; R.forEach(r => { (r.themes||(r.theme?[r.theme]:[])).forEach(t => { themeCount[t]=(themeCount[t]||0)+1; }); });
 
   const bestDate   = DATES.reduce((a,b) => dateCount[a] >= dateCount[b] ? a : b);
   const bestBudget = Object.entries(budgetCount).sort((a,b)=>b[1]-a[1])[0];
-  const topThemes  = Object.entries(themeCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  const topTheme   = Object.entries(themeCount).sort((a,b)=>b[1]-a[1])[0];
 
-  // ── Meta cards ──
+  const pct = (n) => Math.round(n/R.length*100);
+
+  // Meta
   const metaHTML = `<div class="meta-row">
     <div class="mcard"><div class="mnum">${R.length}</div><div class="mlabel">Participant${R.length>1?'s':''}</div></div>
     <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestDate}</div><div class="mlabel">Date favorite</div></div>
     <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestBudget?bestBudget[0]:'—'}</div><div class="mlabel">Budget favori</div></div>
   </div>`;
 
-  // ── RECOMMENDATION BOX ──
-  const bestDateCount = dateCount[bestDate];
-  const bestDatePct   = Math.round(bestDateCount/R.length*100);
-  const budgetPct     = bestBudget ? Math.round(bestBudget[1]/R.length*100) : 0;
-
-  let recoHTML = `<div class="reco-box">
+  // Reco box
+  const recoItems = [
+    { label: 'Date idéale', value: bestDate, n: dateCount[bestDate], detail: `${dateCount[bestDate]} participant${dateCount[bestDate]>1?'s':''} disponible${dateCount[bestDate]>1?'s':''}` },
+    { label: 'Budget retenu', value: bestBudget?bestBudget[0]:'—', n: bestBudget?bestBudget[1]:0, detail: `Choix majoritaire à ${bestBudget?pct(bestBudget[1]):0}%` },
+    { label: 'Thème plébiscité', value: topTheme?topTheme[0]:'—', n: topTheme?topTheme[1]:0, detail: `${topTheme?topTheme[1]:0} vote${topTheme&&topTheme[1]>1?'s':''}` },
+  ];
+  const recoHTML = `<div class="reco-box">
     <div class="reco-title">🎯 Recommandation pour la réservation</div>
-    <div class="reco-grid">
-      <div class="reco-item winner">
-        <div class="reco-label">Date idéale</div>
-        <div class="reco-value">${bestDate}</div>
+    <div class="reco-grid">${recoItems.map(it => `
+      <div class="reco-item">
+        <div class="reco-label">${it.label}</div>
+        <div class="reco-value">${it.value}</div>
         <div class="reco-bar">
-          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${bestDatePct}%"></div></div>
-          <span class="reco-pct">${bestDateCount}/${R.length}</span>
+          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${pct(it.n)}%"></div></div>
+          <span class="reco-pct">${pct(it.n)}%</span>
         </div>
-        <div class="reco-sub">${bestDatePct}% de disponibilité</div>
-      </div>
-      <div class="reco-item winner">
-        <div class="reco-label">Budget retenu</div>
-        <div class="reco-value">${bestBudget?bestBudget[0]:'—'}</div>
-        <div class="reco-bar">
-          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${budgetPct}%"></div></div>
-          <span class="reco-pct">${bestBudget?bestBudget[1]:0}/${R.length}</span>
-        </div>
-        <div class="reco-sub">${budgetPct}% des préférences</div>
-      </div>`;
+        <div class="reco-sub">${it.detail}</div>
+      </div>`).join('')}
+    </div>
+  </div>`;
 
-  if (topThemes.length > 0) {
-    const topThemePct = Math.round(topThemes[0][1]/R.length*100);
-    recoHTML += `<div class="reco-item winner">
-        <div class="reco-label">Thème plébiscité</div>
-        <div class="reco-value">${topThemes[0][0]}</div>
-        <div class="reco-bar">
-          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${topThemePct}%"></div></div>
-          <span class="reco-pct">${topThemes[0][1]}/${R.length}</span>
-        </div>
-        <div class="reco-sub">${topThemePct}% des votes</div>
-      </div>`;
-  }
-  recoHTML += `</div></div>`;
-
-  // ── Charts ──
+  // Bar charts
   function barChart(title, items, countFn) {
     const max = Math.max(...items.map(countFn), 1);
     return `<div class="section-title">${title}</div><div class="bar-list">`
-      + items.map(i => {
-          const c = countFn(i), pct = Math.round(c/R.length*100), isTop = c===max && c>0;
-          return `<div class="bar-item">
-            <span class="bar-label">${i}${isTop?' 🏆':''}</span>
-            <div class="bar-track"><div class="bar-fill${isTop?' top':''}" style="width:${pct}%"></div></div>
-            <span class="bar-count">${c}</span>
-          </div>`;
-        }).join('')
-      + '</div>';
+      + items.map(i => { const c=countFn(i), p=pct(c), top=c===max&&c>0;
+        return `<div class="bar-item"><span class="bar-label">${i}${top?' 🏆':''}</span><div class="bar-track"><div class="bar-fill${top?' top':''}" style="width:${p}%"></div></div><span class="bar-count">${c}</span></div>`;
+      }).join('') + '</div>';
   }
 
-  // ── Table ──
+  // Table
   const tableHTML = `<div class="section-title">Détail des réponses</div>
     <div style="overflow-x:auto"><table class="rtable">
       <thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème(s)</th><th>Répondu le</th></tr></thead>
@@ -509,10 +418,10 @@ function renderResults(R) {
 async function clearData() {
   if (!confirm('Effacer toutes les réponses ? Action irréversible.')) return;
   try {
-    const binId = await ensureBin();
-    await writeBin(binId, { responses: [] });
+    const data = await ghRead();
+    await ghWrite([], data.sha);
     loadResults();
-  } catch(e) { alert('Erreur lors de la suppression.'); }
+  } catch(e) { alert('Erreur : ' + e.message); }
 }
 
 function showTab(t, btn) {
@@ -522,9 +431,6 @@ function showTab(t, btn) {
   btn.classList.add('active');
   if (t === 'results') loadResults();
 }
-
-// ─── START ────────────────────────────────────────────────────────────────────
-initShareLink();
 </script>
 </body>
 </html>
