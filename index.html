@@ -267,6 +267,15 @@ const DISPLAY = {
 };
 function disp(v) { return DISPLAY[v] || v; }
 
+const NORMALIZE = {
+  '40–50 €':'40-50 EUR','40-50 €':'40-50 EUR',
+  '50–60 €':'50-60 EUR','50-60 €':'50-60 EUR',
+  '60–70 €':'60-70 EUR','60-70 €':'60-70 EUR',
+  '70–80 €':'70-80 EUR','70-80 €':'70-80 EUR',
+  'Vallée du Rhône':'Vallee du Rhone',
+};
+function norm(v){return NORMALIZE[v]||v;}
+function normEntry(r){return{...r,budget:norm(r.budget),themes:(r.themes||(r.theme?[r.theme]:[])).map(norm)};}
 
 // ─── GitHub storage ───────────────────────────────────────────────────────────
 async function ghRead() {
@@ -275,6 +284,7 @@ async function ghRead() {
   if (!res.ok) throw new Error('Lecture impossible');
   const data = await res.json();
   const content = JSON.parse(atob(data.content.replace(/\n/g,'')));
+  content.responses = (content.responses||[]).map(normEntry);
   return { ...content, sha: data.sha };
 }
 
