@@ -8,46 +8,31 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --wine: #7B1C2E;
-    --wine-light: #A83248;
-    --wine-pale: #F9F0F2;
-    --gold: #C9A84C;
-    --ink: #1A1118;
-    --mist: #F5F0F3;
-    --fog: #EDE5E9;
-    --border: rgba(123,28,46,0.15);
-    --muted: #8B7880;
+    --wine: #7B1C2E; --wine-light: #A83248; --wine-pale: #F9F0F2;
+    --gold: #C9A84C; --ink: #1A1118; --mist: #F5F0F3; --fog: #EDE5E9;
+    --border: rgba(123,28,46,0.15); --muted: #8B7880;
+    --green: #3b6d11; --green-pale: #EAF3DE;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--mist); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
   body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(123,28,46,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 80%, rgba(201,168,76,0.05) 0%, transparent 60%); pointer-events: none; z-index: 0; }
 
-  /* ESTAB HEADER */
-  .estab {
-    position: relative; z-index: 5;
-    background: white;
-    border-bottom: 0.5px solid var(--border);
-    padding: 18px 24px;
-    text-align: center;
-  }
-  .estab-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; font-weight: 400; }
-  .estab-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--wine); margin-bottom: 6px; letter-spacing: 0.02em; }
+  .estab { position: relative; z-index: 5; background: white; border-bottom: 0.5px solid var(--border); padding: 18px 24px; text-align: center; }
+  .estab-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .estab-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--wine); margin-bottom: 6px; }
   .estab-info { font-size: 12px; color: var(--muted); display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
   .estab-info a { color: var(--gold); text-decoration: none; }
   .estab-info a:hover { color: var(--wine); }
   .estab-sep { opacity: 0.4; }
 
-  /* TABS */
   .tabs { position: relative; z-index: 5; display: flex; justify-content: center; background: white; border-bottom: 0.5px solid var(--border); box-shadow: 0 1px 8px rgba(123,28,46,0.05); }
-  .tab-btn { padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.15s, border-color 0.15s; }
+  .tab-btn { padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.15s, border-color 0.15s; }
   .tab-btn:hover { color: var(--wine); }
   .tab-btn.active { color: var(--wine); border-bottom-color: var(--wine); font-weight: 500; }
 
-  /* PAGES */
   .page { display: none; position: relative; z-index: 1; }
   .page.active { display: block; }
 
-  /* FORM */
   .form-inner { max-width: 640px; margin: 0 auto; padding: 0 20px 80px; }
   .fheader { text-align: center; padding: 36px 0 32px; animation: fadeUp 0.4s ease both; }
   .fheader-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
@@ -58,7 +43,7 @@
 
   .card { background: white; border-radius: 18px; border: 0.5px solid var(--border); padding: 26px; margin-bottom: 14px; box-shadow: 0 2px 18px rgba(123,28,46,0.05); transition: box-shadow 0.2s; animation: fadeUp 0.45s ease both; }
   .card:hover { box-shadow: 0 4px 26px rgba(123,28,46,0.09); }
-  .card:nth-child(1){animation-delay:0.05s} .card:nth-child(2){animation-delay:0.1s} .card:nth-child(3){animation-delay:0.15s} .card:nth-child(4){animation-delay:0.2s}
+  .card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.1s}.card:nth-child(3){animation-delay:.15s}.card:nth-child(4){animation-delay:.2s}
   .cnum { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 5px; }
   .cq { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 16px; line-height: 1.3; }
   .chint { font-size: 12px; color: var(--muted); font-weight: 300; }
@@ -72,7 +57,7 @@
   .bcard { border: 1px solid var(--border); border-radius: 14px; background: var(--mist); padding: 16px 10px; cursor: pointer; transition: all 0.15s; text-align: center; user-select: none; }
   .bcard:hover { border-color: var(--wine-light); background: var(--wine-pale); }
   .bcard.selected { background: var(--wine-pale); border-color: var(--wine); box-shadow: inset 0 0 0 1px var(--wine); }
-  .bamount { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--wine); display: block; margin-bottom: 3px; }
+  .bamount { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--wine); display: block; margin-bottom: 3px; }
   .blabel { font-size: 11px; color: var(--muted); line-height: 1.4; }
   .bcard.selected .blabel { color: var(--wine); }
 
@@ -91,7 +76,8 @@
 
   .submit-area { text-align: center; margin-top: 26px; }
   .btn-submit { background: var(--wine); color: white; border: none; border-radius: 100px; padding: 14px 46px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; transition: all 0.15s; box-shadow: 0 4px 18px rgba(123,28,46,0.3); }
-  .btn-submit:hover { background: var(--wine-light); box-shadow: 0 6px 26px rgba(123,28,46,0.4); transform: translateY(-1px); }
+  .btn-submit:hover { background: var(--wine-light); transform: translateY(-1px); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
   #error-msg { color: var(--wine); font-size: 13px; margin-top: 10px; display: none; }
 
   .success { display: none; background: white; border-radius: 18px; border: 0.5px solid var(--border); padding: 44px 28px; text-align: center; box-shadow: 0 2px 22px rgba(123,28,46,0.06); margin: 20px 0; }
@@ -110,19 +96,46 @@
   .rhead { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
   .rhead h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--wine); margin-bottom: 4px; }
   .rhead p { font-size: 13px; color: var(--muted); }
-  .btn-clear { background: transparent; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; font-size: 12px; font-family: 'DM Sans', sans-serif; color: var(--muted); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .btn-refresh { background: var(--wine); color: white; border: none; border-radius: 100px; padding: 8px 18px; font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.15s; }
+  .btn-refresh:hover { background: var(--wine-light); }
+  .btn-clear { background: transparent; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; font-size: 12px; font-family: 'DM Sans', sans-serif; color: var(--muted); cursor: pointer; transition: all 0.15s; }
   .btn-clear:hover { border-color: var(--wine); color: var(--wine); }
+  .rhead-btns { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
   .meta-row { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
   .mcard { background: white; border-radius: 14px; border: 0.5px solid var(--border); padding: 16px 18px; flex: 1; min-width: 120px; text-align: center; }
   .mnum { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--wine); line-height: 1; margin-bottom: 3px; }
   .mlabel { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* RECOMMENDATION BOX */
+  .reco-box { background: white; border-radius: 18px; border: 2px solid var(--gold); padding: 28px; margin-bottom: 28px; box-shadow: 0 4px 24px rgba(201,168,76,0.15); }
+  .reco-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--wine); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .reco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .reco-item { background: var(--wine-pale); border-radius: 14px; border: 1px solid var(--border); padding: 18px 16px; }
+  .reco-item.winner { background: var(--wine); border-color: var(--wine); }
+  .reco-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
+  .reco-item.winner .reco-label { color: rgba(255,255,255,0.7); }
+  .reco-value { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--wine); line-height: 1.2; }
+  .reco-item.winner .reco-value { color: white; }
+  .reco-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .reco-item.winner .reco-sub { color: rgba(255,255,255,0.65); }
+  .reco-bar { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .reco-bar-track { flex: 1; background: rgba(123,28,46,0.1); border-radius: 100px; height: 5px; overflow: hidden; }
+  .reco-item.winner .reco-bar-track { background: rgba(255,255,255,0.25); }
+  .reco-bar-fill { height: 100%; background: var(--wine); border-radius: 100px; }
+  .reco-item.winner .reco-bar-fill { background: white; }
+  .reco-pct { font-size: 12px; color: var(--muted); min-width: 32px; text-align: right; }
+  .reco-item.winner .reco-pct { color: rgba(255,255,255,0.8); }
+
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--ink); margin-bottom: 12px; margin-top: 28px; padding-bottom: 7px; border-bottom: 0.5px solid var(--border); }
   .bar-list { display: flex; flex-direction: column; gap: 9px; }
   .bar-item { display: flex; align-items: center; gap: 10px; }
   .bar-label { font-size: 13px; color: var(--ink); min-width: 130px; flex-shrink: 0; }
   .bar-track { flex: 1; background: var(--fog); border-radius: 100px; height: 9px; overflow: hidden; }
   .bar-fill { height: 100%; background: var(--wine); border-radius: 100px; transition: width 0.6s ease; min-width: 2px; }
+  .bar-fill.top { background: var(--gold); }
   .bar-count { font-size: 13px; color: var(--muted); min-width: 20px; text-align: right; }
+
   .rtable { width: 100%; border-collapse: collapse; font-size: 13px; }
   .rtable th { text-align: left; padding: 7px 10px; font-weight: 500; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 0.5px solid var(--border); }
   .rtable td { padding: 9px 10px; border-bottom: 0.5px solid var(--border); color: var(--ink); vertical-align: top; }
@@ -130,7 +143,9 @@
   .rtable tr:nth-child(even) td { background: var(--mist); }
   .tag { display: inline-block; background: var(--wine-pale); color: var(--wine); border-radius: 100px; padding: 2px 7px; font-size: 11px; margin: 2px 2px 2px 0; }
   .no-data { text-align: center; padding: 48px; color: var(--muted); font-style: italic; font-size: 14px; }
-
+  .loading { text-align: center; padding: 48px; color: var(--muted); font-size: 14px; }
+  .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--wine); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 480px) {
@@ -138,7 +153,8 @@
     .bar-label { min-width: 90px; font-size: 12px; }
     .tab-btn { padding: 11px 16px; font-size: 11px; }
     .estab-info { gap: 8px; font-size: 11px; }
-    .budget-grid { grid-template-columns: repeat(3, 1fr); }
+    .budget-grid { grid-template-columns: repeat(2, 1fr); }
+    .reco-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -169,15 +185,12 @@
       <h1>Dégustation<br><em>de vin</em></h1>
       <p class="fheader-sub">Quelques questions pour organiser une soirée à votre goût. Merci de répondre avant de nous retrouver !</p>
     </div>
-
     <div id="form-area">
-
       <div class="card">
         <div class="cnum">01 —</div>
         <div class="cq">Votre prénom</div>
         <input type="text" class="name-input" id="name" placeholder="ex. Sophie" autocomplete="given-name">
       </div>
-
       <div class="card">
         <div class="cnum">02 —</div>
         <div class="cq">Quelles dates vous conviennent ?<br><span class="chint">Plusieurs choix possibles</span></div>
@@ -190,7 +203,6 @@
           <div class="pill" data-val="Jeu 4 juin">Jeu 4 juin</div>
         </div>
       </div>
-
       <div class="card">
         <div class="cnum">03 —</div>
         <div class="cq">Quel budget par personne ?</div>
@@ -201,7 +213,6 @@
           <div class="bcard" data-val="70–80 €"><span class="bamount">70–80 €</span><span class="blabel">Expérience premium</span></div>
         </div>
       </div>
-
       <div class="card">
         <div class="cnum">04 —</div>
         <div class="cq">Quel thème vous inspire ?<br><span class="chint">Plusieurs choix possibles</span></div>
@@ -216,13 +227,11 @@
           <div class="tcard" data-val="Surprise !"><div class="ticon">🎁</div><div><span class="tname">Surprise !</span><span class="tdesc">Je fais confiance au caviste</span></div></div>
         </div>
       </div>
-
       <div class="submit-area">
-        <button class="btn-submit" onclick="submitForm()">Envoyer ma réponse</button>
+        <button class="btn-submit" id="btn-submit" onclick="submitForm()">Envoyer ma réponse</button>
         <p id="error-msg">Merci de remplir tous les champs avant de valider.</p>
       </div>
     </div>
-
     <div class="success" id="success">
       <div class="sicon">🍷</div>
       <h2>Merci, <span id="sname"></span> !</h2>
@@ -237,111 +246,285 @@
   <div class="results-inner">
     <div class="rhead">
       <div><h2>Résultats du sondage</h2><p id="rsub">Chargement…</p></div>
-      <button class="btn-clear" onclick="clearData()">Effacer les réponses</button>
+      <div class="rhead-btns">
+        <button class="btn-refresh" onclick="loadResults()">↻ Actualiser</button>
+        <button class="btn-clear" onclick="clearData()">Effacer</button>
+      </div>
     </div>
-    <div class="meta-row" id="rmeta"></div>
-    <div id="rbody"></div>
+    <div id="rbody"><div class="loading"><span class="spinner"></span>Chargement des réponses…</div></div>
   </div>
 </div>
 
 <script>
-const KEY = 'vdt_degustation_v1';
-const DATES = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
-const BUDGETS = ['40–50 €','50–60 €','60–70 €','70–80 €'];
+// ─── CONFIG JSONBin ───────────────────────────────────────────────────────────
+// JSONBin.io : stockage JSON partagé, gratuit, sans compte
+// La clé bin est créée automatiquement au premier chargement et stockée en local
+// pour que tous les appareils retrouvent le même bin
+const JSONBIN_KEY = '$2a$10$degustation.wine.team.survey.shared.key.placeholder';
+const BIN_META_KEY = 'vdt_bin_id_v1';
+
+const DATES  = ['Mer 20 mai','Jeu 21 mai','Mer 27 mai','Jeu 28 mai','Mer 3 juin','Jeu 4 juin'];
+const BUDGETS= ['40–50 €','50–60 €','60–70 €','70–80 €'];
 const THEMES = ['Bordeaux','Bourgogne','Espagne','Italie','Vallée du Rhône','Languedoc','Rouge vs Blanc','Surprise !'];
 
-function getR(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch(e){ return []; } }
-function saveR(a){ localStorage.setItem(KEY, JSON.stringify(a)); }
-
-function showTab(t, btn){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('page-'+t).classList.add('active');
-  btn.classList.add('active');
-  if(t==='results') renderResults();
+// ─── BIN MANAGEMENT ──────────────────────────────────────────────────────────
+async function getBinId() {
+  // Try to get from URL param first (for sharing)
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('bin')) {
+    localStorage.setItem(BIN_META_KEY, params.get('bin'));
+    return params.get('bin');
+  }
+  return localStorage.getItem(BIN_META_KEY);
 }
 
-// Interactions
-document.querySelectorAll('#dates .pill').forEach(p=>p.addEventListener('click',()=>p.classList.toggle('selected')));
-document.querySelectorAll('#budget .bcard').forEach(c=>c.addEventListener('click',()=>{
-  document.querySelectorAll('#budget .bcard').forEach(x=>x.classList.remove('selected')); c.classList.add('selected');
-}));
-document.querySelectorAll('#theme .tcard').forEach(c=>c.addEventListener('click',()=>{
-  c.classList.toggle('selected');
-}));
+async function createBin() {
+  const res = await fetch('https://api.jsonbin.io/v3/b', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Bin-Name': 'degustation-vdt', 'X-Bin-Private': 'false' },
+    body: JSON.stringify({ responses: [] })
+  });
+  if (!res.ok) throw new Error('Création bin échouée');
+  const data = await res.json();
+  return data.metadata.id;
+}
 
-function submitForm(){
-  const name = document.getElementById('name').value.trim();
-  const dates = [...document.querySelectorAll('#dates .pill.selected')].map(p=>p.dataset.val);
+async function readBin(binId) {
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`);
+  if (!res.ok) throw new Error('Lecture bin échouée');
+  const data = await res.json();
+  return data.record;
+}
+
+async function writeBin(binId, record) {
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(record)
+  });
+  if (!res.ok) throw new Error('Écriture bin échouée');
+  return res.json();
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+async function ensureBin() {
+  let binId = await getBinId();
+  if (!binId) {
+    binId = await createBin();
+    localStorage.setItem(BIN_META_KEY, binId);
+    // Update URL so it can be shared
+    const url = new URL(window.location);
+    url.searchParams.set('bin', binId);
+    window.history.replaceState({}, '', url);
+  }
+  return binId;
+}
+
+// Show share link in form
+async function initShareLink() {
+  try {
+    const binId = await ensureBin();
+    const url = new URL(window.location);
+    url.searchParams.set('bin', binId);
+    // Show share URL subtly
+    const sub = document.querySelector('.fheader-sub');
+    if (sub && !document.getElementById('share-link')) {
+      const div = document.createElement('div');
+      div.id = 'share-link';
+      div.style.cssText = 'margin-top:14px;font-size:11px;color:var(--muted);';
+      div.innerHTML = `🔗 <a href="${url}" style="color:var(--gold);word-break:break-all;" onclick="copyLink(event,'${url}')">${url.toString()}</a> <span style="font-size:10px">(cliquer pour copier)</span>`;
+      sub.after(div);
+    }
+  } catch(e) {}
+}
+
+function copyLink(e, url) {
+  e.preventDefault();
+  navigator.clipboard.writeText(url).then(() => {
+    const el = document.getElementById('share-link');
+    if (el) { el.innerHTML = '✅ Lien copié dans le presse-papiers !'; setTimeout(initShareLink, 2000); }
+  });
+}
+
+// ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+document.querySelectorAll('#dates .pill').forEach(p => p.addEventListener('click', () => p.classList.toggle('selected')));
+document.querySelectorAll('#budget .bcard').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('#budget .bcard').forEach(x => x.classList.remove('selected')); c.classList.add('selected');
+}));
+document.querySelectorAll('#theme .tcard').forEach(c => c.addEventListener('click', () => c.classList.toggle('selected')));
+
+// ─── SUBMIT ───────────────────────────────────────────────────────────────────
+async function submitForm() {
+  const name   = document.getElementById('name').value.trim();
+  const dates  = [...document.querySelectorAll('#dates .pill.selected')].map(p => p.dataset.val);
   const budget = document.querySelector('#budget .bcard.selected');
-  const themes = [...document.querySelectorAll('#theme .tcard.selected')].map(c=>c.dataset.val);
-  const err = document.getElementById('error-msg');
-  if(!name||dates.length===0||!budget||themes.length===0){ err.style.display='block'; return; }
-  err.style.display='none';
+  const themes = [...document.querySelectorAll('#theme .tcard.selected')].map(c => c.dataset.val);
+  const err    = document.getElementById('error-msg');
+  const btn    = document.getElementById('btn-submit');
+
+  if (!name || dates.length === 0 || !budget || themes.length === 0) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Envoi…';
+
   const entry = { name, dates, budget: budget.dataset.val, themes,
-    ts: new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}) };
-  const all = getR(); all.push(entry); saveR(all);
-  document.getElementById('form-area').style.display='none';
-  document.getElementById('success').classList.add('show');
-  document.getElementById('sname').textContent=name;
-  document.getElementById('sbox').innerHTML = [['Dates',dates.join(', ')],['Budget',budget.dataset.val],['Thème(s)',themes.join(', ')]]
-    .map(([k,v])=>`<div class="sline"><span class="sk">${k}</span><span class="sv">${v}</span></div>`).join('');
-  window.scrollTo({top:0,behavior:'smooth'});
+    ts: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) };
+
+  try {
+    const binId  = await ensureBin();
+    const record = await readBin(binId);
+    record.responses.push(entry);
+    await writeBin(binId, record);
+
+    document.getElementById('form-area').style.display = 'none';
+    document.getElementById('success').classList.add('show');
+    document.getElementById('sname').textContent = name;
+    document.getElementById('sbox').innerHTML = [
+      ['Dates', dates.join(', ')], ['Budget', budget.dataset.val], ['Thème(s)', themes.join(', ')]
+    ].map(([k,v]) => `<div class="sline"><span class="sk">${k}</span><span class="sv">${v}</span></div>`).join('');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    btn.disabled = false; btn.textContent = 'Envoyer ma réponse';
+    err.textContent = 'Erreur réseau, veuillez réessayer.'; err.style.display = 'block';
+  }
 }
 
-function renderResults(){
-  const R = getR();
-  const sub = document.getElementById('rsub');
-  const meta = document.getElementById('rmeta');
+// ─── RESULTS ──────────────────────────────────────────────────────────────────
+async function loadResults() {
   const body = document.getElementById('rbody');
-  if(R.length===0){
-    sub.textContent='Aucune réponse pour l\'instant.';
-    meta.innerHTML=''; body.innerHTML='<div class="no-data">Aucune réponse enregistrée.<br>Partagez le formulaire pour commencer !</div>';
+  const sub  = document.getElementById('rsub');
+  body.innerHTML = '<div class="loading"><span class="spinner"></span>Chargement des réponses…</div>';
+  try {
+    const binId  = await ensureBin();
+    const record = await readBin(binId);
+    renderResults(record.responses || []);
+  } catch(e) {
+    sub.textContent = 'Erreur de chargement.';
+    body.innerHTML = '<div class="no-data">Impossible de charger les réponses.<br>Vérifiez votre connexion.</div>';
+  }
+}
+
+function renderResults(R) {
+  const sub  = document.getElementById('rsub');
+  const body = document.getElementById('rbody');
+
+  if (R.length === 0) {
+    sub.textContent = 'Aucune réponse pour l\'instant.';
+    body.innerHTML  = '<div class="no-data">Aucune réponse enregistrée.<br>Partagez le lien pour commencer !</div>';
     return;
   }
-  sub.textContent = R.length+' réponse'+(R.length>1?'s':'')+' enregistrée'+(R.length>1?'s':'');
+  sub.textContent = R.length + ' réponse' + (R.length > 1 ? 's' : '') + ' partagée' + (R.length > 1 ? 's' : '');
 
-  // Best date
-  let bestDate='',bestCount=0;
-  DATES.forEach(d=>{ const c=R.filter(r=>r.dates.includes(d)).length; if(c>bestCount){bestCount=c;bestDate=d;} });
-  const bCount={}; R.forEach(r=>{ bCount[r.budget]=(bCount[r.budget]||0)+1; });
-  const topB = Object.entries(bCount).sort((a,b)=>b[1]-a[1])[0];
+  // ── Compute counts ──
+  const dateCount = {}; DATES.forEach(d => dateCount[d] = R.filter(r => r.dates.includes(d)).length);
+  const budgetCount = {}; R.forEach(r => { budgetCount[r.budget] = (budgetCount[r.budget]||0)+1; });
+  const themeCount = {}; R.forEach(r => { (r.themes||(r.theme?[r.theme]:[])).forEach(t => { themeCount[t]=(themeCount[t]||0)+1; }); });
 
-  meta.innerHTML=`
+  const bestDate   = DATES.reduce((a,b) => dateCount[a] >= dateCount[b] ? a : b);
+  const bestBudget = Object.entries(budgetCount).sort((a,b)=>b[1]-a[1])[0];
+  const topThemes  = Object.entries(themeCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+
+  // ── Meta cards ──
+  const metaHTML = `<div class="meta-row">
     <div class="mcard"><div class="mnum">${R.length}</div><div class="mlabel">Participant${R.length>1?'s':''}</div></div>
-    <div class="mcard"><div class="mnum" style="font-size:19px;line-height:1.2">${bestDate||'—'}</div><div class="mlabel">Date favorite</div></div>
-    <div class="mcard"><div class="mnum" style="font-size:20px;line-height:1.2">${topB?topB[0]:'—'}</div><div class="mlabel">Budget favori</div></div>
-  `;
+    <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestDate}</div><div class="mlabel">Date favorite</div></div>
+    <div class="mcard"><div class="mnum" style="font-size:18px;line-height:1.3">${bestBudget?bestBudget[0]:'—'}</div><div class="mlabel">Budget favori</div></div>
+  </div>`;
 
-  function barChart(title, items, countFn){
+  // ── RECOMMENDATION BOX ──
+  const bestDateCount = dateCount[bestDate];
+  const bestDatePct   = Math.round(bestDateCount/R.length*100);
+  const budgetPct     = bestBudget ? Math.round(bestBudget[1]/R.length*100) : 0;
+
+  let recoHTML = `<div class="reco-box">
+    <div class="reco-title">🎯 Recommandation pour la réservation</div>
+    <div class="reco-grid">
+      <div class="reco-item winner">
+        <div class="reco-label">Date idéale</div>
+        <div class="reco-value">${bestDate}</div>
+        <div class="reco-bar">
+          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${bestDatePct}%"></div></div>
+          <span class="reco-pct">${bestDateCount}/${R.length}</span>
+        </div>
+        <div class="reco-sub">${bestDatePct}% de disponibilité</div>
+      </div>
+      <div class="reco-item winner">
+        <div class="reco-label">Budget retenu</div>
+        <div class="reco-value">${bestBudget?bestBudget[0]:'—'}</div>
+        <div class="reco-bar">
+          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${budgetPct}%"></div></div>
+          <span class="reco-pct">${bestBudget?bestBudget[1]:0}/${R.length}</span>
+        </div>
+        <div class="reco-sub">${budgetPct}% des préférences</div>
+      </div>`;
+
+  if (topThemes.length > 0) {
+    const topThemePct = Math.round(topThemes[0][1]/R.length*100);
+    recoHTML += `<div class="reco-item winner">
+        <div class="reco-label">Thème plébiscité</div>
+        <div class="reco-value">${topThemes[0][0]}</div>
+        <div class="reco-bar">
+          <div class="reco-bar-track"><div class="reco-bar-fill" style="width:${topThemePct}%"></div></div>
+          <span class="reco-pct">${topThemes[0][1]}/${R.length}</span>
+        </div>
+        <div class="reco-sub">${topThemePct}% des votes</div>
+      </div>`;
+  }
+  recoHTML += `</div></div>`;
+
+  // ── Charts ──
+  function barChart(title, items, countFn) {
     const max = Math.max(...items.map(countFn), 1);
     return `<div class="section-title">${title}</div><div class="bar-list">`
-      + items.map(i=>{ const c=countFn(i); const pct=Math.round(c/R.length*100);
-        return `<div class="bar-item"><span class="bar-label">${i}</span><div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div><span class="bar-count">${c}</span></div>`; }).join('')
+      + items.map(i => {
+          const c = countFn(i), pct = Math.round(c/R.length*100), isTop = c===max && c>0;
+          return `<div class="bar-item">
+            <span class="bar-label">${i}${isTop?' 🏆':''}</span>
+            <div class="bar-track"><div class="bar-fill${isTop?' top':''}" style="width:${pct}%"></div></div>
+            <span class="bar-count">${c}</span>
+          </div>`;
+        }).join('')
       + '</div>';
   }
 
-  const tCount={};R.forEach(r=>{ const ts = r.themes || (r.theme ? [r.theme] : []); ts.forEach(t=>{tCount[t]=(tCount[t]||0)+1;}); });
+  // ── Table ──
+  const tableHTML = `<div class="section-title">Détail des réponses</div>
+    <div style="overflow-x:auto"><table class="rtable">
+      <thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème(s)</th><th>Répondu le</th></tr></thead>
+      <tbody>${[...R].reverse().map(r=>`<tr>
+        <td><strong>${r.name}</strong></td>
+        <td>${r.dates.map(d=>`<span class="tag">${d}</span>`).join('')}</td>
+        <td>${r.budget}</td>
+        <td>${(r.themes||(r.theme?[r.theme]:[])).map(t=>`<span class="tag">${t}</span>`).join('')}</td>
+        <td style="color:var(--muted)">${r.ts}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>`;
 
-  const table = `<div class="section-title">Détail des réponses</div>
-    <div style="overflow-x:auto"><table class="rtable"><thead><tr><th>Prénom</th><th>Dates dispo</th><th>Budget</th><th>Thème(s)</th><th>Répondu le</th></tr></thead><tbody>`
-    +[...R].reverse().map(r=>`<tr>
-      <td><strong>${r.name}</strong></td>
-      <td>${r.dates.map(d=>`<span class="tag">${d}</span>`).join('')}</td>
-      <td>${r.budget}</td><td>${(r.themes||[r.theme]).map(t=>`<span class="tag">${t}</span>`).join('')}</td>
-      <td style="color:var(--muted)">${r.ts}</td></tr>`).join('')
-    +`</tbody></table></div>`;
-
-  body.innerHTML =
-    barChart('Disponibilités par date', DATES, d=>R.filter(r=>r.dates.includes(d)).length)
-    + barChart('Budget par personne', BUDGETS, b=>bCount[b]||0)
-    + barChart('Thème préféré', THEMES, t=>tCount[t]||0)
-    + table;
+  body.innerHTML = metaHTML + recoHTML
+    + barChart('Disponibilités par date', DATES, d => dateCount[d]||0)
+    + barChart('Budget par personne', BUDGETS, b => budgetCount[b]||0)
+    + barChart('Thème préféré', THEMES, t => themeCount[t]||0)
+    + tableHTML;
 }
 
-function clearData(){
-  if(confirm('Effacer toutes les réponses ? Action irréversible.')){ localStorage.removeItem(KEY); renderResults(); }
+async function clearData() {
+  if (!confirm('Effacer toutes les réponses ? Action irréversible.')) return;
+  try {
+    const binId = await ensureBin();
+    await writeBin(binId, { responses: [] });
+    loadResults();
+  } catch(e) { alert('Erreur lors de la suppression.'); }
 }
+
+function showTab(t, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-'+t).classList.add('active');
+  btn.classList.add('active');
+  if (t === 'results') loadResults();
+}
+
+// ─── START ────────────────────────────────────────────────────────────────────
+initShareLink();
 </script>
 </body>
 </html>
