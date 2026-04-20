@@ -10,11 +10,11 @@
         "Mer 3 juin",
         "Jeu 4 juin"
       ],
-      "budget": "50â60 â¬",
+      "budget": "50Ã¢ÂÂ60 Ã¢ÂÂ¬",
       "themes": [
         "Bourgogne",
         "Italie",
-        "VallÃ©e du RhÃ´ne",
+        "VallÃÂ©e du RhÃÂ´ne",
         "Languedoc",
         "Rouge vs Blanc",
         "Surprise !"
@@ -29,12 +29,26 @@
         "Jeu 28 mai",
         "Jeu 4 juin"
       ],
-      "budget": "70–80 €",
+      "budget": "70â80 â¬",
       "themes": [
         "Bourgogne",
-        "Vallée du Rhône"
+        "VallÃ©e du RhÃ´ne"
       ],
       "ts": "20 avr., 17:35"
+    },
+    {
+      "name": "Victor-Lazar",
+      "dates": [
+        "Jeu 21 mai",
+        "Mer 3 juin",
+        "Jeu 4 juin"
+      ],
+      "budget": "50–60 €",
+      "themes": [
+        "Italie",
+        "Vallée du Rhône"
+      ],
+      "ts": "20 avr., 17:37"
     }
   ]
 }
