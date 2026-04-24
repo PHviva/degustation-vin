@@ -107,6 +107,17 @@
         "Bourgogne"
       ],
       "ts": "21 avr., 17:25"
+    },
+    {
+      "name": "Eric",
+      "dates": [
+        "Jeu 4 juin"
+      ],
+      "budget": "50-60 EUR",
+      "themes": [
+        "Vallee du Rhone"
+      ],
+      "ts": "24 avr., 11:32"
     }
   ]
 }
